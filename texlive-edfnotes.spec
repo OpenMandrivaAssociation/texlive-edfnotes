@@ -1,3 +1,9 @@
+# revision 21540
+# category Package
+# catalog-ctan /macros/latex/contrib/edfnotes
+# catalog-date 2011-02-22 21:47:43 +0100
+# catalog-license lppl1.3
+# catalog-version 0.6b
 Name:		texlive-edfnotes
 Version:	0.6b
 Release:	1
@@ -49,6 +55,7 @@ on the pages and in the order that one would expect.
 %doc %{_texmfdistdir}/source/latex/edfnotes/README.tex
 %doc %{_texmfdistdir}/source/latex/edfnotes/edfnotes.tex
 %doc %{_texmfdistdir}/source/latex/edfnotes/srcfiles.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,3 +66,5 @@ on the pages and in the order that one would expect.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
