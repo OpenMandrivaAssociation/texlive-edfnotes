@@ -6,7 +6,7 @@
 # catalog-version 0.6b
 Name:		texlive-edfnotes
 Version:	0.6b
-Release:	3
+Release:	4
 Summary:	Critical annotations to footnotes with ednotes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/edfnotes
