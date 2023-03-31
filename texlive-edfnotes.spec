@@ -1,6 +1,6 @@
 Name:		texlive-edfnotes
 Version:	21540
-Release:	1
+Release:	2
 Summary:	Critical annotations to footnotes with ednotes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/edfnotes
