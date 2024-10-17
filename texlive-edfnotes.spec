@@ -3,7 +3,7 @@ Version:	21540
 Release:	2
 Summary:	Critical annotations to footnotes with ednotes
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/edfnotes
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/edfnotes
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.doc.r%{version}.tar.xz
