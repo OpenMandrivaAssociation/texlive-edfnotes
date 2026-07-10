@@ -1,52 +1,25 @@
-Name:		texlive-edfnotes
-Version:	21540
-Release:	2
+%global tl_name edfnotes
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.6b
+Release:	%{tl_revision}.1
 Summary:	Critical annotations to footnotes with ednotes
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/edfnotes
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/edfnotes.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package modifies the annotation commands and label-test
-mechanism of the ednotes package so that critical notes appear
-on the pages and in the order that one would expect.
+The package modifies the annotation commands and label-test mechanism of
+the ednotes package so that critical notes appear on the pages and in
+the order that one would expect.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/edfnotes/edfnotes.sty
-%doc %{_texmfdistdir}/doc/latex/edfnotes/PdUsample.pdf
-%doc %{_texmfdistdir}/doc/latex/edfnotes/README
-%doc %{_texmfdistdir}/doc/latex/edfnotes/README.pdf
-%doc %{_texmfdistdir}/doc/latex/edfnotes/README.txt
-%doc %{_texmfdistdir}/doc/latex/edfnotes/SRCFILEs.txt
-%doc %{_texmfdistdir}/doc/latex/edfnotes/edfnotes.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/edfnotes/README.tex
-%doc %{_texmfdistdir}/source/latex/edfnotes/edfnotes.tex
-%doc %{_texmfdistdir}/source/latex/edfnotes/srcfiles.tex
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
